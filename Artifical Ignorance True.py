@@ -1,45 +1,33 @@
-from flask import Flask, render_template
+import random
 
-app = Flask(__name__)
+print("HSEU Artifical Ignorance V1.1")
 
-@app.route('/')
-def index():
-    # This function will look for 'index.html' in the 'templates' folder
-    return render_template('index.html', title='Home Page', message='Hello from Flask!')
+mathh = ["67...i think", "2001", "1+1=2", "Yes"]
+history = ["Alexander The Ungreat", "2067", "1453", "September 11th", "Yes"]
+geography = ["All roads lead to Rome", "Your house", "My house", "Niger", "Yes"]
+helpp = ["I don't know", "Ever try turning reality off then on again?", "Ok", "Yes"]
 
-if __name__ == '__main__':
-    app.run(debug=True)
+math_keywords = ["add", "subtract", "minus", "divide", "multiply", "times", "plus", "sum", "difference", "product", "quotient", "calculate", "what is", "equals", "squared", "square root", "percent", "fraction", "solve", "total"]
+history_keywords = ["who was", "when did", "what happened", "why did", "history", "war", "battle", "president", "king", "queen", "empire", "revolution", "century", "ancient", "historical", "founded", "invented", "discovery", "treaty", "dynasty", "year"]
+geography_keywords = ["where is", "capital", "country", "continent", "ocean", "river", "mountain", "population", "city", "located", "border", "largest", "smallest", "island", "desert", "lake", "map", "region", "territory", "flag"]
+help_keywords = ["help", "how do i", "how do you", "what is", "explain", "what does", "how to", "can you", "show me", "tell me", "what are", "guide", "assist", "support", "instructions", "tutorial", "tips", "advice"]
 
+while True: 
+    print("Ask me ANY question (or type quit to exit and spare me)")
+    question = input("I'll get it wrong: ")
 
-print("ARTIFICIAL IGNORANCE")
-print("Intelligence module not found.")
-print("Type quit to exit.")
-
-while True:
-    question = input("Ask me something: ").lower()
-    
-    if question == "quit":
-        print("Shutting down... incorrectly.")
-        break
-        
-    print("Thinking.")
-    print("Thinking..")
-    print("Thinking...")
-    
-
-    if "+" in question or "-" in question or "*" in question or "/" in question or "add" in question or "minus" in question:
-        print("Final Answer: 67. I think.")
-    
-    
-    elif "who" in question or "when" in question or "why" in question:
-        print("Final Answer: That happened during the Penguin Dynasty of 3021 BC.")
-    
-    
-    elif "help" in question or "fix" in question or "problem" in question:
-        print("Final Answer: Have you tried turning reality off and on again?")
-    
+    if any(word in question for word in math_keywords):
+        print(random.choice(mathh))
+    elif any(word in question for word in history_keywords):
+        print(random.choice(history))
+    elif any(word in question for word in geography_keywords):
+        print(random.choice(geography))
+    elif any(word in question for word in help_keywords):
+        print(random.choice(helpp))
+    elif question == "quit":
+        print("Goodbye! I was wrong about it all and proud to be")
     else:
-        print("Final Answer: The answer is purple.")
-        print("Correction: No, wait.")
-        print("Final Final Answer: Bananas.")
+     print("I have no idea what you're talking about.")
 
+#This is version 2 of the code
+#The 1st version can be found at: https://www.online-python.com/d4PUymGzax
