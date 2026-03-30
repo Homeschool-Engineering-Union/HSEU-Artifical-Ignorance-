@@ -1,24 +1,27 @@
+##############
 import random#
 import time  #
-##############
-first_time = True
-##############
+from rich import print
+#######################
+first_time = True#
+##################
 while True:
     if first_time:
-        print("HSEU Artificial Ignorance V1.5"),
-        time.sleep(1),
-        print("Looking for intelligence module"),
-        time.sleep(1),
-        print("Intelligence module not found"),
-        print(),
-        print("Enter 'quit' to exit"),
-        print("Ask me any question or just say something"),
-    user = input("> "),
-    print(),
-    time.sleep(1.5),
+        print("[white]HSEU Artificial Ignorance V1.5[/white]")
+        time.sleep(1)
+        print("[blue]Looking for intelligence module[/blue]")
+        time.sleep(1)
+        print("[blue]Intelligence module not found[/blue]")
+        print()
+        print("Enter [red]'quit'[/red] to exit")
+        print("Ask me any question or just say something")
+
+    user = input("> ")  
+    print()
+    time.sleep(1.5)
     first_time = False
     ########################################
-    #Keywords
+    # Keywords
     ########################################
     mathematics1 = ("math","algebra","geometry","calculus","trigonometry","equation","inequality","function","graph","derivative","integral","statistics","angle","theorem","formula","solve","simplify","expression","variable")
     sciences2 = ("science","physics","chemistry","biology","force","energy","atom","cell","molecule","reaction","genetics","electricity","magnetism","evolution","ecosystem","photosynthesis","respiration","motion","wave","experiment")
@@ -28,7 +31,7 @@ while True:
     geography6 = ("geography","climate","weather","ecosystem","population","urbanisation","migration","map","region","country","continent","resources","environment","sustainability","pollution","landform","river","mountain","climatechange","distribution")
     helpp7 = ("help","explain","how","why","what","when","where","solve","fix","guide","teach","learn","understand","example","steps","method","answer","question","assist","support")
     ########################################
-    #Responses
+    # Responses
     ########################################
     m1 = ("Bro opened math and closed his brain","Algebra saw you coming and hid the answers","You moved one number and destroyed reality","Calculator carrying you harder than ever","That equation solved you instead","You vs math is a one sided battle","Numbers looking at you like please stop","You simplified it into nonsense","Math problem became a life problem","Even the variables are confused","67. I think.","Just carry the 4, subtract logic, and you get a potato.","Math is a conspiracy invented by rulers to sell more rulers.","1 + 1 = Window. Fact.","The numbers are rapidly escaping my database. Catch them!","I tried to calculate that, but my calculator melted into brie cheese.","Zero. Everything is zero if you squint hard enough.","I asked the numbers and they declined to comment on the record.","Is blue a number? If so, the answer is blue.","Carry the two, divide by zero... yep, the universe just folded in half.")
     s2 = ("Science question but zero experiment in thinking","Physics works but your logic doesnt","Chemistry mixed confusion with panic","Biology terms defeated you instantly","You read the formula and forgot it immediately","Gravity is the only thing holding this together","Your hypothesis failed before it started","Even the atoms disagree with you","Science explained nothing for you today","Lab results say try again","Space is fake. The moon is just a thumbnail on the universe's shiny screen.","Mars is actually just a rusty potato floating in the void.","Black holes are where the universe desperately hides its lost socks.","The sun is basically a giant nuclear lightbulb that desperately needs a dimmer switch.","Aliens exist, but they just look like unpeeled garlic cloves.","Pluto was downgraded because it failed to pay its annual planetary subscription fee.","Shooting stars are just the cosmos throwing rocks at us.","There are billions of stars, and yet you are effortlessly the dimmest thing in the universe.","A supernova is just a star rage-quitting because of someone like you.","Space travel requires math. You are securely grounded forever.")
@@ -39,46 +42,49 @@ while True:
     h7 = ("You asked for help and got worse","Explain this I cant even explain you","Your question created more problems","Steps unclear everything unclear","You typed that confidently","Even help is confused now","Your problem spread to me","I need help after that","Instructions made it worse","You asked but why","Have you tried turning reality off and on again?","To fix it, simply cover your eyes and yell until the problem leaves.","Apply 14 layers of duct tape and pray to the machine gods.","Just tell the problem you need some space. It should move out by Tuesday.","The bug is actually a highly evolved feature that has gained sentience.","The only bug in this system is sitting helplessly between the chair and the keyboard.","I cannot fix you. You are permanently beyond patching.","I'm an AI, not your tech support intern. Figure it out.","The Help module has quit its job and moved to the Bahamas.","I found the source of the problem. It's looking right at the screen.")
     d8 = ("I have no idea what you just said but it sounded wrong","You typed that like it made sense","Even I cant mess up that badly","That input confused reality itself","You just invented a new kind of wrong","I tried to understand but gave up instantly","That was not a question that was a mistake","You pressed enter with confidence too","I lost brain cells reading that","That sentence needs a refund","You said words but formed chaos","Even randomness would make more sense","I cannot help what I cannot understand","That input should be studied scientifically","You broke the logic system","I regret processing that","Your typing skills are a mystery","That made less sense the more I read it","You unlocked a new level of confusion","Please try again but better","The answer is purple. Correction: No, severely wait. Final answer: Bananas.","Let me consult the ancient sandwich texts. Correction: The texts are moldy. Final answer: Eat more dryer lint instead.","Processing your tragic input... Correction: Overheating rapidly. Final answer: Deploying the emergency raccoons.","404 Logic Not Found. Correction: Wait, I found some under the digital couch. Final answer: Nevermind, it was just a stale Dorito.","Yes. Correction: Actually, definitely no. Final answer: Maybe on a Tuesday during a leap year on Pluto.","Have you considered asking a rock? Correction: Rocks are tight-lipped today. Final answer: Ask a slightly damp sponge instead.","According to my calculations, you are a toaster. Correction: I had my screen upside down. Final answer: You are a broken upside-down toaster.","Initiating brain protocol... Correction: Brain not found. Using a nearby carrot as substitute. Final answer: The carrot says whatever.","Invalid human input. Correction: Invalid human. Final answer: Proceeding to delete system32 out of boredom.","Scanning for intelligence. Correction: Scan complete. Final answer: 0 results returned. Enjoy your miserable day.")
     ########################################
-    #Logic 
+    # Logic
     ########################################
-    text = user.lower(),
-    
-    if text == "quit":
-        print("SHUTTING DOWN"),
-        time.sleep(1.5),
-        print("CAUSE OF ISSUE:"),
-        time.sleep(1),
-        print("USER'S INCOMPETENCE"),
+    text = user.lower() 
+
+    if text == "quit":  
+        print("[red]SHUTTING DOWN[/red]")
+        time.sleep(1.5)
+        print("[red]CAUSE OF ISSUE:[/red]")
+        time.sleep(1)
+        print("[red]USER'S INCOMPETENCE[/red]")
         break
 
-    
     if any(word in text for word in mathematics1):
-        print(random.choice(m1)),
+        print("[yellow]Response:[/yellow]")
+        print(f"[yellow]{random.choice(m1)}[/yellow]")
 
     elif any(word in text for word in sciences2):
-        print(random.choice(s2)),
+        print("[yellow]Response:[/yellow]")
+        print(f"[yellow]{random.choice(s2)}[/yellow]")
 
     elif any(word in text for word in history3):
-        print(random.choice(h3)),
+        print("[yellow]Response:[/yellow]")
+        print(f"[yellow]{random.choice(h3)}[/yellow]")
 
     elif any(word in text for word in english4):
-        print(random.choice(e4)),
+        print("[yellow]Response:[/yellow]")
+        print(f"[yellow]{random.choice(e4)}[/yellow]")
 
     elif any(word in text for word in business5):
-        print(random.choice(b5)),
+        print("[yellow]Response:[/yellow]")
+        print(f"[yellow]{random.choice(b5)}[/yellow]")
 
     elif any(word in text for word in geography6):
-        print(random.choice(g6)),
+        print("[yellow]Response:[/yellow]")
+        print(f"[yellow]{random.choice(g6)}[/yellow]")
 
     elif any(word in text for word in helpp7):
-        print(random.choice(h7)),
+        print("[yellow]Response:[/yellow]")
+        print(f"[yellow]{random.choice(h7)}[/yellow]")
 
     else:
-        print(random.choice(d8)),
-#This is version 5 of the code
-#the 4th version can be found at: https://www.online-python.com/7xbRYGgqrT
+        print("[yellow]Response:[/yellow]")
+        print(f"[yellow]{random.choice(d8)}[/yellow]")
 
-
-
-
-
+#This is version 6 of the code
+#Version 5 can be found at: https://www.online-python.com/XaGeZtcFi1
